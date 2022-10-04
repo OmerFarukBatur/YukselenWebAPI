@@ -9,6 +9,7 @@ using YukselenWebAPI.BL.Repositories.Question;
 using YukselenWebAPI.BL.Repositories.QuestionsWellBeing;
 using YukselenWebAPI.BL.Repositories.SurveyResult;
 using YukselenWebAPI.BL.Repositories.User;
+using YukselenWebAPI.BL.Services;
 using YukselenWebAPI.DAL.Context;
 using YukselenWebAPI.DAL.Repositories.Answer;
 using YukselenWebAPI.DAL.Repositories.AnswerQuestionsWellBeing;
@@ -20,6 +21,7 @@ using YukselenWebAPI.DAL.Repositories.Question;
 using YukselenWebAPI.DAL.Repositories.QuestionsWellBeing;
 using YukselenWebAPI.DAL.Repositories.SurveyResult;
 using YukselenWebAPI.DAL.Repositories.User;
+using YukselenWebAPI.DAL.Service;
 
 namespace YukselenWebAPI.DAL
 {
@@ -58,6 +60,9 @@ namespace YukselenWebAPI.DAL
 
             services.AddScoped<IUserReadRepository, UserReadRepository>();
             services.AddScoped<IUserWriteRepository, UserWriteRepository>();
+
+
+            services.AddScoped<IQuestionService, QuestionService>();
         }
     }
 }
