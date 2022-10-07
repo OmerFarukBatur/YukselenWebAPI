@@ -29,7 +29,7 @@ namespace YukselenWebAPI.DAL
     {
         public static void AddDALServices(this IServiceCollection services)
         {
-            services.AddDbContext<YukselenDBContext>(options => options.UseSqlServer(Configuration.ConfigurationString));
+            //services.AddDbContext<YukselenDBContext>(options => options.UseSqlServer(Configuration.ConfigurationString));
 
             services.AddScoped<IAnswerReadRepository, AnswerReadRepository>();
             services.AddScoped<IAnswerWriteRepository, AnswerWriteRepository>();

@@ -9,7 +9,7 @@ using YukselenWebAPI.ViewModel;
 
 namespace YukselenWebAPI.Controllers
 {
-    
+
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class UserController : ControllerBase
@@ -22,12 +22,12 @@ namespace YukselenWebAPI.Controllers
         }
 
         [HttpPost(Name = "register")]
-        public IActionResult Register( Deneme user )
+        public IActionResult Register(Deneme user)
         {
             return Ok(user);
         }
-        [HttpGet(Name ="get-question")]
-        public async Task<IActionResult> GetQuestion(string formName)
+        [HttpGet(Name = "get-question")]
+        public async Task<IActionResult> GetQuestion([FromBody] string formName)
         {
             List<Question> result = await _questionService.GetQuestionsAsync(formName);
             return Ok(result);
